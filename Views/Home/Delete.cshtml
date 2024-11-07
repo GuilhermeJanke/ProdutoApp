@@ -1,0 +1,15 @@
+﻿@model ProdutoAppMVC.Models.Produto
+
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+
+<h1>Excluir Produto</h1>
+
+<p>Tem certeza que deseja excluir o produto <strong>@Model.Nome</strong>?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Cancelar</a>
+</form>
